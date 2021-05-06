@@ -1,27 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>TEST</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no,email=no,address=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<!--导航-->
+	<link rel="stylesheet" href="https://z7jin.gitee.io/7/easyhelper.min.css">
+	<script src="https://z7jin.gitee.io/7/es6-shim.min.js"></script>
+	<script src="https://z7jin.gitee.io/7/jquery-3.3.1.min.js"></script>
+	<script src="https://z7jin.gitee.io/7/jquery.transit.min.js"></script>
+	<script src="https://z7jin.gitee.io/7/easyhelper.min.js"></script>
 <style>
-.loading{opacity:0;background:#fff url(xiaoju.jpg);
-background-repeat:no-repeat;
-background-position:center center;
--webkit-background-size:cover;
--moz-background-size:cover;
--o-background-size:cover;
-background-size:cover;position:fixed;width:100%;left:0px;top:0;bottom:0;animation:Loading 3s;line-height:100vh;text-align:center;font-size:30px;color:#ccc;}
-@keyframes Loading
-{0% {opacity:1;color:#C1FF50;z-index:999999;}
-20% {opacity:1;color:#5CB8FF;}
-40% {opacity:1;color:#FFD350;}
-60% {opacity:1;color:#FF5950;}
-80% {opacity:.5;color:#fff;}
-100% {opacity:0;}}
+body:before{content:"";position:fixed;z-index:-1;top:0;right:0;bottom:0;left:0;background:url(https://api.btstu.cn/sjbz/?lx=m_meizi) center 0 no-repeat;background-size:cover;opacity:.3;}
+.wrapper {text-align: center;margin: 7px auto;}
+.wrapper button {width: 77px;margin: -1px 1px;}
+
+.title{color:#f35626;background-image:-webkit-linear-gradient(92deg,#f35626,#feab3a);-webkit-animation:hue 3s infinite linear;-webkit-text-fill-color:transparent;-webkit-background-clip:text}
+#mom{animation:change 3s infinite;font-weight:100; }
+@keyframes change{0%{color:#FFEDE0;}20%{color:#FFE3D0;}40%{color:#FFC9A4;}60%{color:#FFA262;}80%{color:#FF812A;}100% {color:#FF6800;}}
+.custom-btn{width:80px;height:30px;color:#fff;border-radius:7px;padding:1px 2px;font-family:'Lato',sans-serif;font-weight:500;background:transparent;cursor:pointer;transition:all 0.3s ease;position:relative;display:inline-block;box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.7),7px 7px 20px 0px rgba(0,0,0,.3),4px 4px 5px 0px rgba(0,0,0,.1)}
+.btn777{background:rgba(255,37,137,0.1);background:linear-gradient(0deg,rgba(173,73,7,0.3) 0%,rgba(49,110,244,.07) 100%);bottom: 0px;background: rgba(255,37,137,0.07);border-top: solid white 1px;text-align: center;font-size: 16px;color:#f35626;background-image:-webkit-linear-gradient(92deg,#f35626,#feab3a);-webkit-animation:hue 3s infinite linear;-webkit-text-fill-color:transparent;-webkit-background-clip:text};text-shadow: #000 1px 1px 1px;"border:none;transition:all 0.3s ease;overflow:hidden;font-size: 18px;font-family:Arial,Lucida Grande,Tahoma,sans-serif;}
+.btn777:after{position:absolute;content:" ";top:0;left:0;z-index:-1;width:100%;height:100%;transition:all 0.3s ease;-webkit-transform:scale(.1);transform:scale(.1)}
+.btn777:hover{color:#000;border:none;background:transparent}
+.btn777:hover:after{background:rgba(255,37,137,0.07);background:linear-gradient(0deg,rgba(2,126,251,1) 0%,rgba(255,37,137,0.07)100%);-webkit-transform:scale(1);transform:scale(1)}
 </style>
+<!--导航-->
 </head>
 <body>
-<div class="loading">内容加载中...</div>
-
+<iframe style="display:block;position:relative;margin:-14px auto;text-align:center;" src="https://z7jin.gitee.io/3d/" frameborder="0" scrolling="no" width="100%" height="300px"></iframe>
+<!--导航-->
+<h3 style="display:block;position:relative;margin:7px auto;text-align:center;" id="mom">小້໌ᮨㅤ七҉ㅤ❤️ㅤ之ㅤ家</h3>
+<div class="wrapper title">
+<button class="custom-btn btn777" id="dialog01">小姐姐1</button>ㅤㅤㅤㅤ
+<button class="custom-btn btn777" id="dialog02">小姐姐2</button> <br> <br>
+<button class="custom-btn btn777" id="dialog1">系统程序</button>
+<button class="custom-btn btn777" id="dialog2">软件工具</button>
+<button class="custom-btn btn777" id="dialog3">游戏娱乐</button>
+<button class="custom-btn btn777" id="dialog4">电影音乐</button> <br> <br>
+<button class="custom-btn btn777" id="dialog11">手机系统</button>
+<button class="custom-btn btn777" id="dialog12">手机游戏</button>
+<button class="custom-btn btn777" id="dialog13">精品App</button> <br> <br>
+<button class="custom-btn btn777" id="dialog14">在线音乐</button>
+<button class="custom-btn btn777" id="dialog15">在线影院</button> <br> <br>
+<button class="custom-btn btn777" id="dialog777">在线留言</button>
+<script>
+$("#dialog01").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/api/1/",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog02").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/api/2/",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog1").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/category/1",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog2").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/category/2",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog3").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/category/3",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog4").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/category/4",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog11").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/go/?url=http://bbs.ydss.cn/forum.php?forumlist=1&mobile=yes",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog12").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/go/?url=https://cg.163.com",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog13").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/go/?url=//www.43dh.com/html/update.html",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog14").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"https://88.al/music/",showButton:false,darkMode:true,fullscreen:true,})})
+$("#dialog15").on("click",function(){Helper.ui.dialog({title:"  ",width:777,contentHeight:666,contentScroll:false,iframe:"//7jin.top/go/tv.html",showButton:false,darkMode:true,fullscreen:true,})})
+$( "#dialog777" ).on("click", function () {
+Helper.ui.dialog({
+title:"",
+width: 777,
+contentHeight: 666,
+contentScroll: false,
+iframe: "//7jin.top/about.html",
+showButton: false,//隐藏按钮
+darkMode: true,//暗黑模式
+fullscreen: true,//全屏模式
+//yesText: "我要确定",//按钮文字
+//noText: "我要取消"，//按钮文字
+//autoClose: 3000,//自动关闭
+//contentBgColor: "#f3f3f3",//内容背景
+//mask: false//隐藏遮罩
+});})
+</script>
+<!--导航-->
+<!--  音乐播放器 --> 
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"> 
+  <script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script> 
+  <script src="//cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script> 
+<style>
+.aplayer .aplayer-lrc{height:30px}
+.aplayer .aplayer-lrc p{font-size:16px;font-weight:700;line-height:18px !important}
+.aplayer .aplayer-lrc p.aplayer-lrc-current{color:#FF1493}
+.aplayer.aplayer-narrow .aplayer-body{left:-65px !important}
+.aplayer.aplayer-fixed .aplayer-lrc{display:none}
+.aplayer .aplayer-lrc.aplayer-lrc-hide{display:none !important}
+.aplayer.aplayer-fixed .lrc-show{display:block;background:rgba(255,255,255,0)}
+</style> 
+  <meting-js id="5360622654&amp;" server="netease" type="playlist" fixed="true" autoplay="true" loop="all" order="random" preload="none" volume="77" mutex="true" < eting-js> 
+   <script>
+    $(function () {
+      $('body').on('click', '.aplayer', function () {
+        if ($('.aplayer-button').hasClass('aplayer-play')) {
+          $('.aplayer-lrc').removeClass('lrc-show');
+        } else {
+          $('.aplayer-lrc').addClass('lrc-show');
+        }
+      })
+    });hex
+  </script> 
 </body>
 </html>
