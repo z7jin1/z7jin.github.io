@@ -1,0 +1,2 @@
+$ touch CNAME
+$ echo 'x7zj.cn'> CNAME
