@@ -76,7 +76,6 @@
 
 *{margin:0;padding:0}*,:after,:before{box-sizing:border-box}a{text-decoration:none;cursor:pointer;color:#fff;text-shadow:#f0f 0 1px 3px,#f0f 1px 0 3px,#f0f 0 -1px 3px,#f0f -1px 0 3px;filter:glow(color=#FF00FF,strength=3)}
 body{ background: url(https://s3.bmp.ovh/imgs/2023/09/22/60cf7c32aed0386b.webp); background-size: cover;opacity:0.7}
-.bg_green,.color_ccc,
 .tdtop,.ta_wjq{background:transparent!important}
 #dzx,#ysmenu1,#lyz{border-radius:60px 60px 10px 10px;box-shadow:0 6px 6px rgba(0,0,0,0.3)}
 .yszdyq{display: none}input[type="button"],button{color:#F57F17;background-color:transparent;border:px solid #6c757d;padding:.375rem.75rem}
@@ -89,4 +88,4 @@ input[type="button"],button{color:#F57F17;background-color:transparent;padding:1
 #ysmenu>div:first-child{margin-left:0!important;}
 #ysmenu div {margin:0px;width:25%;height:28px;text-align:center;}
 .yszdyq{display:none;}
-.z_bt{display:none;border:none;}
+.bg_green,.color_ccc,.z_bt{display:none;border:none;}
