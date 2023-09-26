@@ -74,7 +74,7 @@
 
 
 
-*{margin:0;padding:0}*,:after,:before{box-sizing:border-box}a{text-decoration:none;cursor:pointer;color:#fff;text-shadow:#f0f 0 1px 3px,#f0f 1px 0 3px,#f0f 0 -1px 3px,#f0f -1px 0 3px;filter:glow(color=#FF00FF,strength=3)}
+*{margin:0;padding:0}*,a{text-decoration:none;cursor:pointer;color:#fff;text-shadow:#f0f 0 1px 3px,#f0f 1px 0 3px,#f0f 0 -1px 3px,#f0f -1px 0 3px;filter:glow(color=#FF00FF,strength=3)}
 body{background:linear-gradient(177deg,#cf334a 0,#163168 77%);background-repeat:no-repeat;background-size:cover;height:100vh}body:before{top:0;left:0;right:0;bottom:0;z-index:-1;content:"";position:fixed;background:url(https://s3.bmp.ovh/imgs/2023/09/22/60cf7c32aed0386b.webp) center 0 no-repeat;background-size:cover;opacity:.7}
 .bg_green,.tdtop,.ta_wjq{background:transparent!important}
 #dzx,#ysmenu1,#lyz{border-radius:60px 60px 10px 10px;box-shadow:0 6px 6px rgba(0,0,0,0.3)}
