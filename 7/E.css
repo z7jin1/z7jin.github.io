@@ -87,4 +87,7 @@ input[type="button"],button{color:#F57F17;background-color:transparent;padding:1
 #ysmenu div {margin:0px;width:25%;height:28px;text-align:center;}
 .yszdyq{display:none;}
 .z_bt{display:none;border:none;}
-.tdtop,.ta_wjq{border-style:none;center;background:linear-gradient(transparent,transparent)!important;}#menuList li.gml{border-bottom:0;}#dzx,#ysmenu1,#lyz{background:transparent}body{background:url(https://dl.zhutix.net/2023/09/78234786.gif) center top;background-size:cover;background-size:100%}*{color: black;font-size:10pt;font-weight:bold;}div.yszdyq{margin:0;}#idzdy1{display:none!important}#buyh span{visibility:hidden;}.fgg5 .ystop a,.fgg5 .ystop{text-align:center;color:#f900a1}.z_bt{display: none}.fgg5 .dqcd, .fgg5 #ysmenu1{background-color:#cce2f400;}
+body{background-image:url('https://t.mwm.moe/pc');background-size:cover;background-repeat:no-repeat;}
+@media all and (orientation : portrait){
+body{background-image:url('https://t.mwm.moe/mp');background-size:cover;background-repeat:no-repeat;}}
+*{color: black;font-size:10pt;font-weight:bold;}div.yszdyq{margin:0;}#idzdy1{display:none!important}#buyh span{visibility:hidden;}.fgg5 .ystop a,.fgg5 .ystop{text-align:center;color:#f900a1}.z_bt{display: none}.fgg5 .dqcd, .fgg5 #ysmenu1{background-color:#cce2f400;}.tdtop,.ta_wjq{border-style:none;center;background:linear-gradient(transparent,transparent)!important;}#menuList li.gml{border-bottom:0;}#dzx,#ysmenu1,#lyz{background:transparent}
