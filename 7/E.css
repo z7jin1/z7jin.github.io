@@ -75,7 +75,7 @@
 
 
 body{background:url(https://s3.bmp.ovh/imgs/2023/09/27/9031516a7dd7cd26.jpg) center 0 no-repeat;background-size:cover;opacity:.7}
-.div,.bg_green,.tdtop,.ta_wjq{background:transparent!important}
+#div,.div,.bg_green,.tdtop,.ta_wjq{background:transparent!important}
 #dzx,#ysmenu1,#lyz{border-radius:37px 37px 7px 7px;box-shadow:0 7px 7px rgba(0,0,0,0.3)}
 .yszdyq{display: none}input[type="button"],button{color:#F57F17;background-color:transparent;border:px solid #6c757d;padding:.373rem.73rem}
 #menuList li{padding:5px!important}.z_bt{display:none}
