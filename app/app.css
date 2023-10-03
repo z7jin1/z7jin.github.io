@@ -7,7 +7,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 9999;
+    z-index: 999;
     background-image: url("../app/bg-mm.png");
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -21,7 +21,7 @@
     position: fixed;
     bottom: 106px;
     left: 0;
-    z-index: 100;
+    z-index: 999;
 
 }
 
@@ -30,7 +30,7 @@
     height: 50px;
     position: fixed;
     bottom: 50px;
-    z-index: 10000;
+    z-index: 999;
 }
 
 .app_btn_r {
