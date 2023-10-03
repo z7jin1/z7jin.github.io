@@ -1,0 +1,8 @@
+﻿@charset "utf-8";
+body{background-color: #f4f4f4; margin: 0; font-family:'微软雅黑','宋体',sans-serif; overflow:hidden;}
+
+.mb-box{width: 300px; height: auto; padding:21px; position: absolute; top: 21px; margin-left: 3px; z-index: 7; overflow: hidden;}
+.bb{margin: 0 auto; width: 300px; max-height: 500px; border-radius: 3px; box-shadow: 0px 0px 3px #999; overflow: hidden; background: url(../images/alpha-bg.png);}
+.bb h2{margin: 3px auto 0px; padding: 3px 0px 3px; width: 280px; font-size:25px; text-align: center; color: #FE2E2E; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.bb_text{height: auto; min-height: 200px; max-height: 300px; padding:3px 3px; text-indent:2em; line-height:28px; font-size: 16px; color:#303030; overflow: auto;}
+.bb_myname{text-align: right; padding: 0px 3px 1px; font-size:20px; line-height: 3px; color: #000;}
