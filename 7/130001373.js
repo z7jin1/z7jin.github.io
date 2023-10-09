@@ -20,5 +20,5 @@ $(function(){
     var myObj = {"title":[ t01,t02,t03,t04,t05,t06,t07,t08,t09,t10,t11 ]}
     var x = myObj.title.length;
     var i = 0 ;
-    function tit(){document.getElementsByTagName("title")[0].innerText = myObj.title[i];i++;if( i == x ){ i = 0 ;}setTimeout(function (){tit()}, 777);}
+    function tit(){document.getElementsByTagName("title")[0].innerText = myObj.title[i];i++;if( i == x ){ i = 0 ;}setTimeout(function (){tit()}, 7);}
     tit()});
