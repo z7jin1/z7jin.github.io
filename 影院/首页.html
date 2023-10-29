@@ -16,11 +16,11 @@
                     <div class="logo-txt"><a href="./">小້໌　七҉</a></div>
                 </div>
                 <ul id="skin-nav">
-			<li class="switch"><a href="z7jin.github.io">首页</a></li>
+			<li class="switch"><a href="https://z7jin.github.io">首页</a></li>
             <li id="more"><a href="javascript:void(0)">分类</a>
                 <ul id="more-subnav">
-<a href="影院.html" target="Hs">影院</a>
-<a href="https://music.dogged.cn/" target="Cf">音乐</a>
+<a href="https://z7jin.github.io/影院">影视</a>
+<a href="https://z7jin.github.io/音乐" target="Cf">音乐</a>
 <a href="https://z7jin.github.io/视频" target="Cf">视频</a>
 <a href="https://z7jin.github.io/图片" target="Cf">图片</a>
                 </ul>
@@ -52,32 +52,9 @@
 <!--- 头部栏完--->
 <div class="container">
 <div class="Ym">
-<!--列表栏-->
-<div class="LBn"><iframe id="Hs" name="Hs" src="影院.html" width="100%" height="100%" frameborder="0"></iframe></div>
 <!--播放器-->
- <div class="BFn"><span id="LByx"></span>
- <iframe name="Cf" id="Cf" src="https://soupian.in" width="100%" height="100%" scrolling="auto" frameborder="0" allowfullscreen="true"></iframe></div>
+ <iframe name="Cf" id="Cf" src="https://inftab.com" width="100%" height="100%" scrolling="auto" frameborder="0" allowfullscreen="true"></iframe></div>
 </div>
-<script type="text/javascript">
-$(document).ready( function() {
-	var $uu = $(".uu");
-	var $Ds = $(".Ym");
-	$uu.hide();
-	$uu.first().delay(58).slideDown(88);
-	$uu.on("click","h1", function() {
-		$uu.siblings().find("h1").removeClass("ok");
-		$(this).addClass("ok");
-	});
-	$Ds.on("click", "h1", function() {
-		$(this).next(".uu").slideToggle().siblings(".uu").slideUp();
-	});
-});
-$(document).ready(function(){
- $("#LByx").click(function(){
- $(".LBn").toggle();
-});
-});//列表隐显
-</script>
 <!---内容完成 显示底部栏--->
 <script src="./static/js/wz.js" type="text/javascript"></script>
 </div>
