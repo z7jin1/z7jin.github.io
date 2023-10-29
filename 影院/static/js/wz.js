@@ -1,6 +1,6 @@
 $(function(){
- $.backstretch(["/Bt/bg/44.jpg","/Bt/bg/55.jpg","/Bt/bg/66.jpg","/Bt/bg/77.jpg","/Bt/bg/88.jpg","/Bt/bg/99.jpg"],
- {fade:1000,duration:60000}); //背景，切换现实
+ $.backstretch(["/bg/44.jpg","/bg/55.jpg","/bg/66.jpg","/bg/77.jpg","/bg/88.jpg","/bg/99.jpg"],
+ {fade:1000,duration:777}); //背景，切换现实
 });
 
 function DHwz(){//设置导航栏菜单颜色
@@ -10,7 +10,7 @@ var zz = wz[3];
 if(!$.trim(zz)){ 
 cf.style.backgroundColor="rgba(255,28,147,.3)";
 }else{
-document.getElementById(zz).style.backgroundColor="rgba(8,250,8,.2)";
+document.getElementById(zz).style.backgroundColor="rgba(8,250,8,.3)";
 }
 };
 DHwz()
@@ -37,7 +37,7 @@ $(document).ready(function(){
  $(".LBn").toggle();
 });
 });//列表隐显
-//setTimeout(function(){ $(".LBn").fadeOut(888);},60000);//设置列表一分钟隐藏
+setTimeout(function(){ $(".LBn").fadeOut(666);},777);//设置列表隐藏
 
 function wzgd(){
       var hzf = document.title;
