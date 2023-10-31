@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+		<title>小້໌　七҉</title>
+<style type="text/css">
+* {margin: 0;padding: 0;outline: none;}
+html {height: 100%; }
+*html{background-image:url(about:blank);background-attachment:fixed;}
+body{height:100%;background:#232323;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+.none {display:none}
+.bingdoutv{width:100%;height:100%;}
+.main {overflow:hidden; zoom:1 }
+.main .left-sider {float:left; width:100%; }
+.operate h3 { font-family: "Microsoft YaHei",微软雅黑; font-size:14px; background:#232323 url("./static/image/w-ico.png") 3px center no-repeat;_background:#232323 url("./static/image/w-ico-ie.png") 3px center no-repeat; height:33px; line-height:34px; padding-left:11px;color:#888;text-indent:15px; }
+.operate ul li { display:inline; margin-bottom:1px;}
+.operate ul li a { text-decoration:none; font-size:7px; color:#888; display:block;  height:33px;  line-height:44px;  }
+.operate ul li a.noline { border-bottom:none; }
+.operate ul li a:hover{ color:#eee;text-decoration:none;background:url("./static/image/w-ico20.png") 10px 10px no-repeat;_background:url("./static/image/w-ico20-ie.png") 10px 10px no-repeat;}
+.operate ul li a.sel{ color:#eee;text-decoration:none;background:url("./static/image/w-ico20.png") 10px 10px no-repeat;_background:url("./static/image/w-ico20-ie.png") 10px 10px no-repeat;}
+.operate ul li a.selected:hover { color:#fff; }
+.operate ul li .selected { background-color:#eee;  background-position:200px -9px; color:#fff; }
+.operate ul li {  display:inline-block; width:100%; position: relative; min-height:33px; _height:33px; z-index: 10; zoom:1 }
+.operate ul li h1 {color:#d7d7d7;font-size:7px;height:30px;line-height:30px;padding-left:30px;border-bottom:1px solid #303030;}
+.operate ul li h4 { cursor:pointer; background:#2e2e2e url(./static/image/bg3.png) no-repeat 10px 18px; padding-left:30px; text-decoration:none; font-size:7px; color:#999; display:block;  line-height:44px; font-weight:normal; }
+.operate ul li.noline { border-bottom:none; }
+.operate ul li h4:hover { color:#eee; text-decoration:none; }
+.operate ul li.selected h4 { background-position:10px -37px; }
+.operate ul li a { }
+.operate ul li .on a { color:#eee; font-weight:bold; }
+.operate ul li a:hover { color:#eee; text-decoration:none;}
+.bg-color { background-color:#8caf00; }
+.operate li .list-item { padding:3px 0; position:relative; zoom:1;background:#232323; }
+.operate li .list-item p { padding-left:3px;white-space:nowrap;}
+.operate li .list-item a { background:none;  border:none; color: #888; display:block; height:32px; line-height: 32px; margin: 0 -1px 0 1px; padding-left: 30px;  position: relative; text-decoration: none; font-size:7px;background:url("./static/image/w-ico19.png") 10px 10px no-repeat;_background:url("./static/image/w-ico19-ie.png") 10px 10px no-repeat; }
+::-webkit-scrollbar{width:1px;height:1px;}/*滚动条整体*/
+::-webkit-scrollbar-track{border-radius:7px; background-color: rgba(7,7,7,.7);}/*轨道*/
+::-webkit-scrollbar-thumb{border-radius:7px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2); background-color: rgba(7,7,7,.7);}/*滑块*/
+::-webkit-scrollbar-thumb:hover{border-radius:7px; -webkit-box-shadow: inset 0 0 6px rgba(255,250,250,.2); background-color: rgba(255,78,32,.7);}/*效果*/
+</style>
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/1.12.4/jquery.js"></script>
+<script>
+function navList(id) {
+    var $obj = $("#J_navlist"), $item = $("#J_nav_" + id);
+    $item.addClass("on").parent().removeClass("none").parent().addClass("selected");
+    $obj.find("h4").hover(function () {
+        $(this).addClass("hover");
+    }, function () {
+        $(this).removeClass("hover");
+    });
+    $obj.find("p").hover(function () {
+        if ($(this).hasClass("on")) { return; }
+        $(this).addClass("hover");
+    }, function () {
+        if ($(this).hasClass("on")) { return; }
+        $(this).removeClass("hover");
+    });
+    $obj.find("h4").click(function () {
+        var $div = $(this).siblings(".list-item");
+        if ($(this).parent().hasClass("selected")) {
+            $div.slideUp(600);
+            $(this).parent().removeClass("selected");
+        }
+        if ($div.is(":hidden")) {
+            $("#J_navlist li").find(".list-item").slideUp(600);
+            $("#J_navlist li").removeClass("selected");
+            $(this).parent().addClass("selected");
+            $div.slideDown(600);
+        } else {
+            $div.slideUp(600);
+        }
+    });
+}
+</script>
+</head>
+<body oncontextmenu="return false" onselectstart="return false">
+<div class="bingdoutv">
+  <div class="main">
+    <div class="left-sider">
+      <div class="operate">
+        <h3><i class="fa fa-bars"></i>软件列表<a style="margin-left:5px;color:#888;text-decoration:none;font-size:7px;" rel="nofollow" href='javascript:location.reload()'>(刷新)</a></h3>
+        <ul id="J_navlist">
+          <li>
+            <h4>软件资源</h4>
+                        <div class="list-item">
+            			<a href="http://www.423down.com/" target="play">423软件</a>
+						<a href="http://www.wotianna.com/" target="play">我天呐</a>
+						<a href="http://www.dayanzai.me/android" target="play">大眼仔</a>
+						<a href="http://www.uy5.net/" target="play">克隆窝</a>
+						<a href="http://www.xibuluo.com/" target="play">西部落</a>
+						<a href="http://foxirj.com/" target="play">佛系软件</a>
+						<a href="http://www.appinn.com/" target="play">小众软件</a>
+						<a href="http://www.ghxi.com/" target="play">果壳剥壳</a>
+						<a href="http://www.iplaysoft.com/" target="play">异次元软件</a>
+						<a href="http://www.iapps.me/" target="play">翻应用</a>
+						<a href="http://www.mpyit.com/" target="play">绿色软件</a>
+						<a href="http://www.hezibuluo.com/" target="play">盒子部落</a>
+            			</div>
+                      </li>
+            		  <li>
+                        <h4>蓝奏云库</h4>
+                        <div class="list-item none">
+						<a href="http://pan.lanzoux.com/u/qianxun8" target="play">大肥爱分享</a>
+						<a href="http://pan.lanzoux.com/b888887" target="play">游戏合集</a>
+						<a href="http://fxjd.lanzouw.com/b06bcdu3g" target="play">月亮软件库</a>
+						<a href="http://lanzoui.com/b0019iwsj" target="play">软件部落</a>
+						<a href="http://www.lanzoui.com/b838976/" target="play">GG分享社</a>
+						<a href="http://www.lanzoui.com/u/296742969" target="play">软件大全</a>
+						<a href="http://www.lanzoui.com/u/jiek" target="play">小银软件</a>
+						<a href="http://www.lanzoui.com/b281858/" target="play">黑科技玩机</a>
+						<a href="http://www.lanzoui.com/b133841/" target="play">兜兜精品</a>
+						<a href="http://www.lanzoui.com/b252370/" target="play">霖软件合集</a>
+						<a href="http://www.lanzoui.com/b63771/" target="play">分享社</a>
+						<a href="http://www.lanzoui.com/b244238/" target="play">软件阁</a>
+						<a href="http://www.lanzoui.com/u/%E6%8B%BD%E6%8B%BD" target="play">嗨分享软件</a>
+						<a href="http://www.lanzoui.com/b60364" target="play">线报坊</a>
+						<a href="http://i52.lanzouy.com/s/i52" target="play">学习合集</a>
+						<a href="http://mrj.lanzouj.com/s/rjkm" target="play">迷人劫软件</a>
+						<a href="http://bhvip.lanzoux.com/u/%E5%BD%AA%E7%85%8CQQ1846055318" target="play">游戏合集</a>
+						</div>
+                      </li>
+					  
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" language="javascript">navList(37);</script>
+<script>
+        window.onload = function(){
+            document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                if(e.keyCode == 123){
+                    return false;
+                //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+                }else if((e.shiftKey) && (e.keyCode == 121)){
+                    return false;
+                //Ctrl+U
+                }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+            document.oncontextmenu = function (){
+                return false;
+            }
+        }
+</script>
+</body>
+</html>
