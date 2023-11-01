@@ -1,8 +1,7 @@
-/*长风音乐 Cf.Css*/
 *{margin:0px; padding:0px;}
 html,body{margin: 0 auto;height: 100%;font-size: 13px; font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; background-color:transparent; line-height: 1.5;}
 body
-{
+{background:rgba(7,7,7,.7);
 background-image:url(../image/xh.jpg);
 overflow-x:hidden;
 z-index:888;
@@ -32,7 +31,7 @@ p{word-wrap: break-word;}
  padding-left: 10%;
  z-index:88888;
  text-align:left;
- background: rgba(58, 58, 58, 0.5);
+ background:rgba(58,58,58,.5);
  border-bottom: rgba(70, 70, 71, 0.5) 1px solid;
 }
 .menu
@@ -63,10 +62,10 @@ p{word-wrap: break-word;}
  padding:0px 25px;/*设置头部字区宽度*/
 }
 
-::-webkit-scrollbar{width: 12px;height: 12px;}/*滚动条整体*/
-::-webkit-scrollbar-track{border-radius: 8px; background-color: rgba(225,255,255,.8);}/*轨道*/
-::-webkit-scrollbar-thumb{border-radius: 8px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2); background-color: rgba(175,238,238,.5);}/*滑块*/
-::-webkit-scrollbar-thumb:hover{border-radius: 8px; -webkit-box-shadow: inset 0 0 6px rgba(255,250,250,.2); background-color: rgba(0,255,0,.2);}/*效果*/ 
+::-webkit-scrollbar{width: 1px;height: 1px;}/*滚动条整体*/
+::-webkit-scrollbar-track{border-radius: 1px; background-color: rgba(225,255,255,.8);}/*轨道*/
+::-webkit-scrollbar-thumb{border-radius: 1px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2); background-color: rgba(175,238,238,.5);}/*滑块*/
+::-webkit-scrollbar-thumb:hover{border-radius: 1px; -webkit-box-shadow: inset 0 0 6px rgba(255,250,250,.2); background-color: rgba(0,255,0,.2);}/*效果*/ 
 
 .hide{/* 隐藏效果 */
  top: -58px;
