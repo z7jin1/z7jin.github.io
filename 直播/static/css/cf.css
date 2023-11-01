@@ -1,10 +1,21 @@
-*{margin:0px; padding:0px;}
-html,body{margin: 0 auto;height: 100%;font-size: 13px; font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; background-color:transparent; line-height: 1.5;}
-body
-{background:rgba(7,7,7,.7);
-background-image:url(../image/xh.jpg);
-overflow-x:hidden;
-z-index:888;
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html,body {
+	margin: 0 auto;
+	height: 100%;
+	font-size: 13px;
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	background-color:rgba(7,7,7,.7);
+	line-height: 1.5;
+}
+
+body {
+	background-image: url(https://imgsrc.baidu.com/forum/pic/item/4afbfbedab64034fe5e0e533e9c379310a551dd1.jpg);
+	overflow-x: hidden;
+	z-index: 888;
 }
 ul,ol,li,dl,dt,dd,h2,h3,p,img,span,nav,header{
 list-style:none;
