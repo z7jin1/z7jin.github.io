@@ -641,7 +641,7 @@ i.fa {
 .logo-img {
 	margin-left: 3px;
 	margin-right: 3px;
-	width: 33px;
+	width: 37px;animation: run 3s linear infinite;}@keyframes run{from{transform: rotate(0deg);}to{transform: rotate(360deg);}}.logo:hover{animation-play-state: paused;
 }
 
 .logo-img img {
