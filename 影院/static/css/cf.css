@@ -122,11 +122,11 @@ p {
 }
 
 .BFn {
-	flex: 1;
+	flex:1;
 }
 
-.LBn {
-	width: 80px;
+.LBn { flex:1;
+	/*width: 80px;*/
 	border: 1px solid #F88;
 	overflow-y: auto;
 	overflow-x: hidden;
