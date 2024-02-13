@@ -1,0 +1,1487 @@
+/* 
+此文件包含:
+- root 昼夜切换也不做了
+- 懒得写了
+
+
+*/
+/* root 💕 */
+:root {
+    /* 默认字体的颜色 */
+    --Body-font-color: #4d4d4d;
+    /* 详细介绍字体的颜色 */
+    --BoxItemDesc-font-color: rgb(89, 89, 89);
+    /* 网站logo字体颜色 */
+    --BoxItemLogo-font-color: #3273dc;
+    /* box大盒子背景颜色 */
+    --BoxBackImg: linear-gradient(45deg, #f4f2f9 0%, #eaf4f8 100%);
+    /* box里网址小盒子背景颜色 */
+    --BoxItemBackground-color: linear-gradient(135deg, #d4e8f6 0%, #e6e6f6 100%);
+    /* 网页背景颜色 */
+    --BodyBackground-color: #ffffff;
+    /* box大盒子投影 */
+    --Box-shadow: 0 1px 20px 0 #ecf2f9;
+    /* box大盒子hover投影 */
+    --Box_hover-shadow: inset 9px 7px 20px 9px #ecf2f9;
+    /* 返回顶部背景颜色 */
+    --gototop-back-color: #fff;
+    /* 返回顶部箭头颜色 */
+    --gototop-svg-color: rgb(199, 196, 196);
+    /* 小尬聊天顶部背景颜色 */
+    --ctrm-title-bgcolor: linear-gradient(90deg, #FFDEE9 0%, #B5FFFC 100%);
+    /* 小尬聊天顶部字体色 */
+    --ctrm-title-color: #444;
+    /* 小尬聊天左边背景颜色 */
+    --ctrm-panel-bgcolor: rgb(252, 252, 252);
+    /* 左栏背景颜色 */
+    --left-bar-bgcolor: #30333c;
+    /* 左栏a标签的字体颜色 */
+    --left-bar-font-color: #c5c5c5;
+}
+
+/* root end */
+
+a,
+aside,
+body,
+div,
+footer,
+html,
+i,
+img,
+li,
+nav,
+p,
+section,
+ul {
+    /* padding: 1px; */
+    /* 去掉就可以居中显示最上方的三个按钮 */
+    margin: 0px;
+}
+
+li {
+    list-style: none
+}
+
+i {
+    font-style: normal
+}
+
+/* 图片文字水平居中 */
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    /* cursor: url(https://cdn.custom-cursor.com/db/4655/32/arrow2662.png), default; */
+    /* https://xiaolongmr.github.io/test/cur/a1.png */
+}
+
+body {
+    font-size: 12px;
+    color: var(--Body-font-color);
+    font-family: Helvetica Neue, Microsoft Yahei;
+    overflow-x: hidden !important;
+    /* 去除横向滚动条 添加日期2022/04/04 */
+    /* cursor: url(https://cdn.custom-cursor.com/db/4656/32/arrow2662.png), default; */
+    /* https://xiaolongmr.github.io/test/cur/body.png */
+    /* 增加高度100vh */
+    height: 100vh;
+    background-color: var(--BodyBackground-color);
+}
+
+/* .container, .main{2021年11月6号将背景颜色改为透明色，为下面动态背景做铺垫 2022年1月20号修改增加夜间模式,因此将此配置去掉,在bootstrap1.css添加组合颜色 background: #4b8fc70a}*/
+
+.nav .iconfont {
+    color: #6b7386;
+    /* 左侧目录默认icon颜色 */
+    padding-right: 4px
+}
+
+.container .left-bar {
+    position: fixed;
+    padding: 0 20px;
+    background: var(--left-bar-bgcolor);
+    color: #6b7386;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    width: 248px;
+    transition: all .5s
+}
+
+.container .main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    margin-left: 248px
+}
+
+.container .main .iconfont {
+    font-size: 18px;
+    padding-right: 5px;
+    text-shadow: -15px -10px 30px;
+    /* 带色彩的图标距离右边字体的距离 */
+    /* color: #000 */
+    /* 去掉字体图标的原作者的颜色 */
+}
+
+.set-scroll {
+    background-color: #494f5e;
+    border-radius: 0;
+    width: 4px
+}
+
+.left-bar .title {
+    color: #fff;
+    font-size: 18px;
+    height: 60px;
+    line-height: 60px;
+    padding: 10px;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    align-items: center;
+}
+
+.left-bar .title a {
+    color: rgb(255, 255, 255);
+}
+
+.left-bar .nav {
+    flex: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1
+}
+
+.left-bar .nav .item {
+    height: 48px;
+    line-height: 46px;
+    border-top: 2px solid #383b44;
+    border-bottom: 2px solid #383b44
+}
+
+.left-bar .nav>.active {
+    position: relative
+}
+
+.left-bar .nav>.active .line {
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 3px;
+    background: #fa7094;
+    z-index: 100000;
+    margin-top: 10px
+}
+
+.left-bar .nav-item {
+    /* min-height: 100vh; */
+    overflow-y: scroll;
+    padding: .1rem 0rem;
+    /* max-height: calc(100vh - 155px); */
+    max-height: calc(100vh - var(--adjustment));
+    /* max-height: calc(100vh - var(--adjustment) - 155px); */
+    width: 100%;
+}
+
+.left-bar .nav-item::-webkit-scrollbar-track {
+    background-color: #494f5e;
+    border-radius: 0;
+    width: 4px
+}
+
+.left-bar .nav-item::-webkit-scrollbar-thumb {
+    background-color: #494f5e;
+    border-radius: 0;
+    width: 4px
+}
+
+.left-bar .nav-item::-webkit-scrollbar {
+    background-color: #494f5e;
+    border-radius: 0;
+    width: 4px
+}
+
+.left-bar .nav-item li {
+    padding-left: 20px;
+    height: 2.2rem;
+    line-height: 1.7rem;
+}
+
+.left-bar .nav-item li:hover a,
+.left-bar .nav-item li:hover i,
+.left-bar .nav-item li>.active,
+.left-bar .nav-item li>.active i {
+    color: hotpink;
+    text-shadow: -2px 3px 11px;
+}
+
+.left-bar .nav-item li a {
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    width: 100%;
+    color: var(--left-bar-font-color);
+}
+
+/* 本站网址的颜色 */
+
+.nav .item a {
+    color: #bee8ff;
+}
+
+/* 这是本站网址的强制一行显示 */
+.nav .item {
+    overflow: hidden;
+    /* 超出部分隐藏 */
+    text-overflow: ellipsis;
+    /* 超出部分显示... */
+    /* white-space: nowrap; */
+    /* 文本强制一行显示 */
+}
+
+/* 同一目录标签的详情解释字体略小 */
+
+.box .sub-category span {
+    font-size: 13px;
+    text-align: 12px;
+}
+
+.nav .comment {
+    position: fixed;
+    z-index: 100;
+    bottom: 1px;
+    width: 200px;
+    /* background: #30333c */
+}
+
+.main #mainContent {
+    max-width: 1200px
+}
+
+.main .box {
+    overflow: hidden;
+    margin: 20px 10px;
+    margin-top: 10px;
+    /* 将每一个大盒子的背景颜色调低透明度 但是保留阴影依然会显示出大盒子*/
+    padding: 12px 16px 12px 12px;
+    border-radius: 7px;
+    box-shadow: var(--Box-shadow);
+    /* 添加背景 2022/04/05 */
+    background-image: var(--BoxBackImg);
+    /* backdrop-filter: blur(0.05rem); */
+    /* -webkit-backdrop-filter: blur(0.1rem); */
+    transform: translateZ(0);
+}
+
+.box:hover {
+    box-shadow: var(--Box_hover-shadow);
+    /* backdrop-filter: blur(.2rem); */
+}
+
+.main .box .sub-category>div {
+    padding-bottom: 12px;
+    font-size: 18px;
+    line-height: initial;
+}
+
+.main .box .item {
+    /* width: 8rem; */
+    border: 1px solid #dbe3f0;
+    box-shadow: 1px 2px 9px 0px #dceaf6;
+    border-radius: 12px;
+    background: var(--BoxItemBackground-color);
+    /* 下面的手机使用会卡 */
+    /* background: hsla(0, 0%, 100%, .25) border-box; backdrop-filter: blur(.1rem); */
+    /* background-image: linear-gradient(135deg, #8bc5ec3d 0%, #9599e225 100%); */
+    /* padding: 10px; */
+    /* min-width: 200px; */
+    /* 上面最小宽度先注释掉521 */
+    /* margin: 22px 0 0 2.1%; */
+    /* margin: 2vh 0 0 2vh; */
+    /* float: left; */
+    overflow: hidden;
+    transition: all .3s;
+    position: relative;
+}
+
+/* .main .box .item .no-logo{color: #3273dc; font-weight: 700; font-size: 14px} */
+
+.main .box .item .logo {
+    height: 60px;
+    position: relative;
+    display: flex;
+    /* font-size: 14px; */
+    font-weight: 700;
+    line-height: 40px;
+    color: var(--BoxItemLogo-font-color);
+    /* overflow: initial; */
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+    padding: 10px;
+    transition: .3s;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main .box .item .logo span {
+    font-size: 14px;
+    /* 添加以下属性实现文字溢出时显示省略号 */
+    white-space: nowrap;
+    /* 防止文字换行 */
+    overflow: hidden;
+    /* 隐藏溢出部分 */
+    text-overflow: ellipsis;
+    /* 使用省略号表示溢出部分 */
+}
+
+.main .box .item .logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* vertical-align: middle; */
+    transition: .3s;
+    margin-right: 0.3rem;
+}
+
+.logo img:hover::after {
+    left: 0;
+    width: 100%;
+    transition: width .3s
+}
+
+.logo img::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    bottom: -2px;
+    width: 0;
+    border-bottom: 1px solid #3a8fb7;
+    transition: width .3s, left .3s
+}
+
+.main .box .item .desc {
+    /* 详细介绍的样式 */
+    text-overflow: ellipsis;
+    /* background-color: #f2ba4b00; */
+    transition: .3s;
+    color: var(--BoxItemDesc-font-color);
+    font-size: 12px;
+    overflow-wrap: break-word;
+    padding: 0px 10px 5px 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 35px;
+    -webkit-line-clamp: 2;
+    /* line-height: 1.25; */
+    line-height: 1.4;
+    /* hidden不生效，为了避免多余的网站介绍露出来半截所以设置成1.5 */
+}
+
+.footer {
+    width: 100%;
+    bottom: 0;
+    line-height: 45px;
+    background: #fff;
+    box-shadow: 1px 2px 3px #f2f6f8
+}
+
+.footer .copyright {
+    margin-left: 30px;
+    color: #949494;
+    font-size: 12px
+}
+
+.footer .copyright a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #bc7575
+}
+
+.footer .copyright a:hover {
+    font-weight: 700;
+    color: #87dadd
+}
+
+#menu-box {
+    display: none;
+    width: 100%;
+    background: #fff;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-shadow: 1px 1px 8px #7ec1f9;
+    height: 50px
+}
+
+#menu-box #menu {
+    height: 50px;
+    width: 40px;
+    position: absolute;
+    right: 10px
+}
+
+#menu-box #menu * {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    box-sizing: border-box
+}
+
+#menu-box #menu input[type=checkbox] {
+    display: none
+}
+
+#menu-box #menu input[type=checkbox]:checked~.menu-spin>.horizontal {
+    opacity: 0
+}
+
+#menu-box #menu input[type=checkbox]:checked~.menu-spin>.line-1 {
+    transform: rotate(405deg);
+    -webkit-transform: rotate(405deg);
+    margin-top: 10px
+}
+
+#menu-box #menu input[type=checkbox]:checked~.menu-spin>.line-2 {
+    transform: rotate(-405deg);
+    -webkit-transform: rotate(-405deg);
+    margin-top: -10px
+}
+
+#menu-box #menu label {
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 10px;
+    left: 0
+}
+
+#menu-box #menu label .line {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #a2a2a2
+}
+
+#menu-box #menu label .horizontal {
+    top: 10px
+}
+
+#menu-box #menu label .line-2 {
+    top: 20px
+}
+
+.download a,
+.download i {
+    color: #3668bd !important
+}
+
+/* 返回顶部 */
+
+#gototop {
+    /* padding: 15px; */
+    /* width: 50px; */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    padding: 10px;
+    /* padding-top: 10px; */
+    /* height: 50px; */
+    text-align: center;
+    /* line-height: 50px; */
+    background: var(--gototop-back-color);
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+    z-index: 9999;
+    box-shadow: rgb(204 230 255) -1px 1px 10px 0px;
+    cursor: pointer;
+    display: none;
+    border-radius: 6px;
+}
+
+#gototop svg {
+    width: 24px;
+    height: 24px;
+    color: var(--gototop-svg-color);
+    transition: all 0.5s;
+}
+
+#gototop:hover svg {
+    color: rgb(248, 126, 126);
+    width: 30px;
+    height: 30px;
+}
+
+a .logo:visited {
+    color: #000;
+}
+
+/* 适配大多数 iPhone 手机，包括 iPhone 5 到 iPhone 14 Pro Max */
+@media screen and (min-width: 320px) and (max-width: 430px) {
+
+    /* 适配大多数 iPhone 手机的通用样式 */
+    .container .box .box-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .container .left-bar {
+        z-index: 999;
+        left: -249px
+    }
+
+    .container .main {
+        margin-left: 0
+    }
+
+    /* 低性能手机优化，手机端优化 */
+    #menu-box {
+        display: block
+    }
+
+    .box:hover {
+        box-shadow: none;
+    }
+
+    /* 手机端去除网站卡片背景 */
+    .main .box .box-card a .item {
+        box-shadow: none;
+    }
+}
+
+/* 适配屏幕宽度在 671px 到 800px 之间的媒体查询 */
+@media screen and (min-width: 671px) and (max-width: 800px) {
+    .container .box .box-card {
+        /* 在这里添加适配的样式 */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        /* 两列 */
+        gap: 10px;
+        /* 可选，设置列之间的间距 */
+    }
+}
+
+/* Medium tablets and larger devices */
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    .container .box .box-card {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Large tablets and small laptops */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .container .box .box-card {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Larger laptops and desktops */
+@media screen and (min-width: 1367px) and (max-width: 1680px) {
+    .container .box .box-card {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+/* Large desktops and ultrawide displays */
+@media screen and (min-width: 1681px) and (max-width: 2560px) {
+    .container .box .box-card {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+}
+
+
+
+/* @media screen and (max-width:481px) {
+     .container .box .item {
+         width: 10.5rem;
+         min-width: 100px
+     }
+     .container .main {
+         margin-left: 0
+     }
+     .container .left-bar {
+         z-index: 999;
+         left: -249px
+     }
+     #menu-box {
+         display: block
+     }
+ }
+ 
+ @media screen and (min-width:481px) {
+     .container .left-bar {
+         left: 0
+     }
+ }
+ @media screen and (min-width:480px) and (max-width:770px) {
+    .container .box .item {
+        position: relative;
+        width: 25rem;
+    }
+    .container .left-bar {
+        left: 0
+    }
+}
+ @media screen and (min-width:771px) and (max-width:789px) {
+     .container .box .item {
+         position: relative;
+         width: 14rem;
+     }
+     .container .left-bar {
+         left: 0
+     }
+ }
+ 
+ @media screen and (min-width:790px) and (max-width:1039px) {
+     .container .box .item {
+         width: 17rem;
+     }
+ }
+ @media screen and (min-width:1040px) and (max-width:1140px) {
+    .container .box .item {
+        width: 16rem;
+    }
+}
+ @media screen and (min-width:1141px) and (max-width:1400px) {
+    .container .box .item {
+        width: 16rem;
+    }
+}
+ @media screen and (min-width:1401px) and (max-width:1920px) {
+     .container .box .item {
+         width: 8rem;
+     }
+ } */
+
+
+/* 遮罩不用了 */
+/* .container .box .item .mask {
+     display: none;
+     position: absolute;
+     top: 50%;
+     left: 0;
+     width: 100%;
+     height: 77%;
+     background: rgb(82 95 135 / 79%);
+     color: rgb(255, 134, 195);
+     text-align: center;
+     backdrop-filter: blur(0.05rem);
+     line-height: 2em;
+     transform: translateZ(0);
+ } */
+/* .container .box .item:active .mask{display: block}*/
+
+/* .container .box .item:hover .mask {
+     display: block
+ } */
+
+iframe {
+    position: fixed;
+    margin-bottom: 100px;
+    border-style: none
+}
+
+.cursor {
+    border-right-color: #457ec9
+}
+
+button {
+    user-select: none;
+    margin-bottom: 5px
+}
+
+body::-webkit-scrollbar {
+    width: 9px
+}
+
+body::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 2px
+}
+
+/* 滚动条 */
+/* 备注时间：2022/1/2 */
+
+body::-webkit-scrollbar-thumb {
+    background-color: #39b0ff;
+    /* 网页整体滚动条正常显示的颜色 */
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%, transparent 75%, transparent);
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #27a009;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%, transparent 75%, transparent);
+    /* 网页整体滚动条按下时的颜色 */
+}
+
+body::-webkit-scrollbar-corner {
+    background: #eeeeee;
+    /* 横竖滚动条相接触颜色 */
+}
+
+/*======✨✨【小尬聊天室】✨✨ 修改日期：2022/07/18======*/
+#ctrm_ .ctrm-textarea textarea {
+    /* 聊天室下面的gif动画 */
+    background: #ffffff url(https://gitee.com/xhcy1116/smile/raw/master/loading/loading1.webp) no-repeat !important;
+    background-position: top right !important;
+    /* 好像下面的没并不能铺满盒子 */
+    background-size: 60% !important;
+}
+
+#ctrm_ .ctrm-title {
+    background-color: #FFDEE9;
+    background-image: var(--ctrm-title-bgcolor) !important;
+    color: var(--ctrm-title-color) !important;
+}
+
+/* 刷新 */
+#ctrm_ .ctrm-title-reconn {
+    /* line-height: 2vw!important; */
+    border: 1px solid #999;
+    background: #f4f4f4;
+}
+
+/* #ctrm_.ctrm-mobile .ctrm-online-wrap:nth-child(1) .ctrm-online-item{在线列表人员昵称字体大小 font-size: 1px;}*/
+
+#ctrm_ .ctrm-panel {
+    background: var(--BoxBackImg) !important;
+}
+
+/* 修改日期：2022/07/14 修改小尬的字体颜色 */
+.ctrm-online-wrap div:nth-child(1) {
+    color: hotpink;
+}
+
+/* 选择2的倍数的在线列表 */
+.ctrm-online-wrap div:nth-child(2n) {
+    color: #144a74;
+}
+
+/* 2022/04/04 */
+#ctrm_ .ctrm-container {
+    position: relative;
+    width: 35vw;
+    height: 40vw;
+    max-height: 85vh;
+    border: 1px solid #e7e7e7;
+    font-size: 0;
+    border-top-left-radius: 2vw;
+    overflow: hidden;
+    transition: all 0.3s;
+    background-color: #f8ffffcc;
+    background: #f7f7f7 border-box;
+    /* backdrop-filter: blur(.2rem); */
+}
+
+/* 修改日期：2022/03/25 添加伪元素为小尬添加后缀 */
+
+.ctrm-online-wrap div:nth-child(1):after {
+    content: " (机器人)";
+}
+
+* {
+    box-sizing: border-box;
+    /* border: 0.5px solid rgba(255, 0, 0, 0.363); */
+}
+
+#ctrm_.ctrm-close.ctrm-mobile .ctrm-container {
+    /* 小尬聊天室手机端收起时的宽度 */
+    width: 76vw !important;
+}
+
+/*======🎊🎊【小尬聊天室end】🎊🎊======*/
+/* 必应搜索 2022年3月28日 */
+.by-search {
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 0 10px;
+    width: 90%;
+}
+
+input {
+    border-radius: 12px;
+    margin: 0 auto;
+    padding: 0 12px;
+    height: 34px;
+    border: 1px solid #d2d2d2;
+    color: rgb(95, 95, 95);
+    /* 搜索栏打字颜色 */
+}
+
+.search-l {
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background: #a3a3a3 border-box;
+    /* backdrop-filter: blur(.2rem); */
+}
+
+.search-r {
+    background-color: #39b0ff;
+}
+
+/* 😆Tips 2022/04/04 */
+
+.fa-bullhorn:before {
+    text-shadow: 4px 5px 30px;
+}
+
+/* 😆Tips end */
+/*==========✨✨【 鼠标触发动作 】✨✨ 添加日期：2022/04/04=========*/
+/*==修改时间： 修改内容：==*/
+/*======【🔰==✔==有logo的触发动画】======*/
+
+/* 自定义logo动画 */
+
+/* 有logo相同样式组合在一起，精简代码 */
+/* .main .box a .item .logo_font12:after {
+     font-size: 12px;
+     color: rgb(180, 180, 180);
+     position: absolute;
+     opacity: 0;
+     top: 0;
+     right: -10px;
+     top: -0.3em;
+     transition: 0.5s;
+ } */
+
+/* 像素画 */
+/* .main .box a .item .eboy:after {
+     content: "好看 \00bb";
+     color: rgb(60, 161, 255);
+ } */
+
+/* qq动态头像制作 */
+/* .main .box a .item .ezgif:after {
+     content: "英文 \00bb";
+     color: rgb(60, 161, 255);
+ } */
+
+/* 站长推荐 */
+/* .main .box a .item .xztj:after {
+     content: "小张推荐🤣 \00bb";
+     color: rgb(144, 60, 255);
+ } */
+
+/* 小白推荐 */
+/* .main .box a .item .xbtj:after {
+     content: "小白推荐😎 \00bb";
+     color: rgb(60, 161, 255);
+ } */
+
+/* 林&月推荐 */
+/* .main .box a .item .lytj:after {
+     content: "大林和小月力推✧ \00bb";
+     color: rgb(151, 60, 255);
+ } */
+
+/* 禹哥推荐 */
+/* .main .box a .item .djtj:after {
+     content: "禹哥推荐😜 \00bb";
+     color: rgb(202, 106, 28);
+ } */
+
+/* 极简插件_Chrome扩展插件商店 */
+/* .main .box a .item .zzzmh:after {
+     content: "无套路下载 \00bb";
+     color: rgb(60, 161, 255);
+ } */
+
+/* .main .box a .sqsl .logo::after {
+     content: "申请收录的 \00bb";
+     color: rgb(193, 60, 255);
+     font-size: 10px;
+ } */
+
+/* .main .box a .item .lstj:after {
+     content: "👋老师推荐的 \00bb";
+     color: rgb(193, 60, 255);
+ } */
+
+
+/*======【🔰==✖==无logo的触发动画】======*/
+/* 无logo相同样式组合在一起，精简代码 */
+/* .main .box a .item .nologo_font:after {
+     content: "ヾ(≧▽≦*)o ";
+     font-size: 12px;
+     color: rgb(180, 180, 180);
+     position: absolute;
+     opacity: 0;
+     top: 0;
+     right: -10px;
+     top: 0.5em;
+     transition: 0.5s;
+ } */
+
+/* .main .box a .item .tj:after {
+     content: "\00bb";
+     color: rgb(60, 161, 255);
+ } */
+/* 疫情加油！ */
+/* .main .box a .item .yiqing:after {
+     content: "疫情一定要好起来！";
+     color: rgb(218, 137, 255);
+ } */
+/* 召唤神龙 */
+/* .main .box a .item .zhsl:after {
+     content: "无聊的时候可以玩一下！";
+     color: rgba(36, 194, 102, 0.836);
+ } */
+/* 资源汇社区 */
+/* .main .box a .item .zyhsq:after {
+     content: "推荐一定要关注的公众号！";
+     color: hotpink;
+ } */
+/* qq微信可打开 */
+/* .main .box a .item .githubnb:after {
+     content: "微信和qq不会拦截的另一个域名";
+     color: skyblue;
+ } */
+/* 申请收录的 */
+/* .main .box a .item .freehostcc:after {
+     content: "申请收录的(新手友好）";
+     color: rgb(60, 161, 255);
+ } */
+/* 自己人 */
+/* .main .box a .item .zijiren:after {
+     content: "自己人\00bb";
+     color: rgb(180, 180, 180);
+ } */
+/* 💦可以自定义，只需要更改class属性 2022/04/04 */
+
+/* .main .box a :hover .nologo_font:after {
+     opacity: 1;
+     right: 0.4em;
+     top: 0.6em;
+ } */
+/* 2022/04/16 视传人 */
+
+/* @keyframes move {
+     0% {
+         background-position: 0 0;
+     }
+     100% {
+         background-position: -300px 0;
+     }
+ } */
+.scr {
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* animation: move 10s infinite; */
+    color: transparent;
+    width: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px rgb(128, 105, 255);
+}
+
+/* 搜索🔍logo扫光 */
+
+.search-box i {
+    position: relative;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 39px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.search-box i:before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 7px;
+    background-color: rgb(255, 255, 255);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: searchLights 1s ease-in 1s infinite;
+    animation: searchLights 2s ease-in 1s infinite;
+}
+
+@keyframes searchLights {
+    0% {
+        left: -80px;
+        top: 0;
+    }
+
+    to {
+        left: 180px;
+        top: 0;
+    }
+}
+
+/*==========✨✨【 右键菜单 】✨✨ 添加日期：2022/06/26===========修改时间： 修改内容： */
+/* #cyy_menu {
+     display: none;
+     position: fixed;
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     width: 150px;
+     box-sizing: border-box;
+     border: 4px solid rgba(255, 255, 255, 0.774);
+     border-radius: 8px;
+     z-index: 1100;
+     background: url(https://p6-pc-sign.douyinpic.com/tos-cn-p-0015/d16a27328a454234b54d53427c810c35~tplv-dy-cropcenter:323:430.jpeg?x-expires=1973325600&x-signature=zN03mrUsXpNAqU8JRlZjuizJrc0%3D&from=4257465056&s=PackSourceEnum_PUBLISH&se=true&sh=323_430&sc=cover&biz_tag=pcweb_cover&l=021657966908531fdbddc0100fff0030a1124a4000000022af765);
+     background-size: cover;
+     background-image: linear-gradient(to top, #a8ede9a9 0%, #fed6e3b4 100%);
+     backdrop-filter: blur(.1rem);
+     box-shadow: 2px 7px 15px #a7a8bd;
+ }
+ 
+ #cyy_menu>li {
+     border-radius: 6px;
+     padding: 0px 10px 0 5px;
+     line-height: 30px;
+ }
+ 
+ #cyy_menu>li:hover {
+     background-color: #f3d4e4d2;
+     color: #fffbea;
+     cursor: pointer;
+ }
+ 
+ #cyy_menu>.hr_break {
+     padding: 0;
+     height: 1.5px;
+     background-color: #ffffffd0;
+ } */
+
+
+/* 头部导航组件 #oooo */
+.header {
+    -moz-box-pack: center;
+    justify-content: center;
+    position: relative;
+    /* padding-block: 0.5rem; */
+    /* 2022/04/01修改上面的，换成下面的padding-top:1rem; */
+    padding-top: 1rem;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    width: min(65ch, 90vw);
+    /* 上面这个是高级的布局 */
+    margin-inline: auto;
+}
+
+/* 导航按钮组件 2022/03/28 */
+.header,
+.header nav {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+}
+
+.header nav a {
+    color: #3e485a;
+    text-decoration: none;
+    line-height: 35px;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.header nav a {
+    display: block;
+    font-size: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 1px 20px 0 #b1c3d48a
+}
+
+/* 顶部nav点击打开状态 */
+.check {
+    background-color: #8197bb !important;
+    box-shadow: 0 1px 20px 0 #88cbff8a !important;
+}
+
+.header nav a:hover,
+.header nav a:focus {
+    color: #16191e;
+    background-color: #cfe3eb;
+}
+
+/* excell部分的css样式 去掉excell表头 */
+.box:nth-child(n) .\5c5e\6027 {
+    display: none !important;
+}
+
+
+/* 第一个box 站长推荐去除网站图标*/
+/* 友情链接去除网站图标*/
+.main .excel .box:nth-child(1) img,
+.main .excel .box:nth-child(15) img {
+    display: none;
+}
+
+.main .excel .box:nth-child(1) .item .logo,
+.main .excel .box:nth-child(15) .item .logo {
+    height: 36px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.main div:nth-child(n)>a>.buttom .desc {
+    background-size: 20% !important;
+    background-position: 130% 100%, 100% 100% !important;
+}
+
+.main div:nth-child(n)>a:hover .buttom .desc {
+    background-position: 100% 100%, 100% 100% !important;
+    z-index: 9999;
+}
+
+/* .main div:nth-child(n)>a>.gpt {
+      background: var(--BoxItemBackground-color), url(https://3o.hk/images/2023/03/29/gpt.png) 99% 100% no-repeat;
+      background-size: 32%;
+      background-position: 0 100%, 100% 100%
+  } */
+.main div:nth-child(n)>a>.zijiren .desc {
+    background: url(https://pic.zhaotu.me/2023/03/24/-1c326616c9b761482.png) no-repeat;
+}
+
+.main div:nth-child(n)>a>.djtj .desc {
+    background: url(http://www.268608.com/imgs/2023/12/25/25c04a934335e9b5.png)no-repeat;
+}
+
+.main div:nth-child(n)>a>.jwps .desc {
+    background: url(http://www.268608.com/imgs/2023/12/25/11e8cc0bced7f0f4.png)no-repeat;
+
+}
+
+
+
+.main .box-card {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    /* 三列，每列平均占据可用空间的1/3 */
+    gap: 10px;
+    /* 可选，设置列之间的间距 */
+}
+
+.box .tags {
+    color: white;
+    font-size: .6rem;
+}
+
+.box .荐:after {
+    content: '荐';
+    position: absolute;
+    background-color: #0084ff;
+    box-shadow: 2px 5px 8px -2px #4381f5;
+    padding: 4px 8px;
+    border-radius: 0px 6px 0px 16px;
+    right: 0px;
+    top: 0px;
+    transition: .3s;
+    -webkit-animation: tags 3s ease-in 3s infinite;
+    /* animation: tags 3s ease-in 3s infinite; */
+}
+
+/* @keyframes tags {
+      0% {
+          background-color: #0084ff;
+      }
+      50% {
+          background-color: #67b5ff;
+      }
+      to {
+          background-color: #0084ff;
+      }
+  } */
+.box .火:after {
+    content: '🔥';
+    position: absolute;
+    background-image: linear-gradient(to right, #c382ff 0%, #8c00ff 100%);
+    box-shadow: 2px 5px 8px -2px #a257f8;
+    padding: 4px 8px;
+    border-radius: 0px 6px 0px 16px;
+    right: 0px;
+    top: 0px;
+    transition: .3s;
+}
+
+.box .佬:after {
+    content: '佬';
+    position: absolute;
+    background-image: linear-gradient(to right, #ff9393 0%, rgb(255, 99, 120) 100%);
+    box-shadow: 2px 5px 8px -2px #f08b5c;
+    padding: 4px 8px;
+    border-radius: 0px 6px 0px 16px;
+    right: 0px;
+    top: 0px;
+    transition: .3s;
+}
+
+.box .UI:after {
+    content: 'UI';
+    position: absolute;
+    background: linear-gradient(38deg, #a1ebc0 0, #3e9f50 100%);
+    box-shadow: 2px 5px 8px -2px #58d133;
+    padding: 4px 8px;
+    border-radius: 0px 6px 0px 16px;
+    right: 0px;
+    top: 0px;
+    transition: .3s;
+    padding: 4px 8px;
+}
+
+.box .收藏:after {
+    content: '收藏';
+    position: absolute;
+    background: linear-gradient(38deg, #ebc2a1 0, #d48f16 100%);
+    box-shadow: 2px 5px 8px -2px #e0aa36;
+    padding: 4px 8px;
+    border-radius: 0px 6px 0px 16px;
+    right: 0px;
+    top: 0px;
+    transition: .3s;
+}
+
+/* 只在电脑生效 缓解手机卡顿 */
+@media screen and (min-width: 768px) {
+    .main .box a .item .logo:after {
+        /* 默认右箭头 */
+        content: '\00bb';
+        font-size: 20px;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -10px;
+        top: -0.25rem;
+        transition: 0.5s;
+    }
+
+    .main .box a :hover .logo:after {
+        opacity: 1;
+        right: .7rem;
+        top: -0.25rem;
+    }
+
+    /* tags 鼠标移入向右消失 */
+    .main .box a:hover .tags::after {
+        right: -40px;
+    }
+
+    .main .excel .box:not(:nth-child(1)):not(:nth-child(15)) a:hover .logo {
+        height: 36px;
+        padding: 5px;
+    }
+
+    /* .main .box:nth-child(7) a:hover .logo, */
+    .main .excel .box:nth-child(15) a:hover .logo {
+        height: 25px;
+        font-size: 14px;
+    }
+
+    /* .main .box:nth-child(7) a:hover .desc, */
+    .main .excel .box:nth-child(15) a:hover .desc {
+        padding-top: 2px;
+        margin-top: -5px;
+        height: 51px;
+        line-height: 1.2;
+        -webkit-line-clamp: 3;
+    }
+
+    .main .box a:hover .item {
+        box-shadow: 1px 2px 10px #9fc4d6;
+        border: 1px solid #62a6e2;
+    }
+
+    .main .excel .box:not(:nth-child(1)):not(:nth-child(15)) a:hover .logo img {
+        filter: brightness(0.8);
+        width: 26px;
+        height: 26px;
+        background: #ffffff;
+        border-radius: 8px;
+    }
+
+    .main .excel .box:not(:nth-child(1)):not(:nth-child(15)) a:hover .desc {
+        padding-top: 5px;
+        height: 59px;
+        -webkit-line-clamp: 3;
+        background-color: #b3ccef;
+    }
+}
+
+/* 黑白模式弹窗标题字号 */
+.swal2-title {
+    font-size: 1.5em !important;
+}
+
+.scroll-container {
+    width: 100%;
+    overflow: auto;
+}
+
+.swal2-image {
+    border-radius: 8px;
+}
+
+.没搜到 {
+    color: hotpink;
+    font-size: 16px;
+    margin: 10px auto;
+    white-space: nowrap;
+}
+
+.box:last-child {
+    display: none;
+}
+
+/* 引导部分样式代码 */
+
+.driver-popover-title{
+    color: hotpink;
+}
+/* end引导部分样式代码 */
+
+
+/* 图标头像 */
+
+.jiaran {
+    float: left;
+    display: block;
+    height: 45px;
+    /* 下面这个是为了加上面装饰 */
+    position: relative;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #e3f9fd url(https://thirdqq.qlogo.cn/g?b=sdk&k=yqjbmdENrko19T7mjIc3vg&s=100&t=1655292317) no-repeat center;
+    transition: all .5s;
+    background-size: cover
+}
+
+.jiaran::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* 国旗图片 图片替换本地的*/
+    background: url(https://cdn.h5ds.com/space/files/600972551685382144/20230808/613387403779678208.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    mask: linear-gradient(110deg, #000 10%, transparent 70%, transparent);
+    -webkit-mask: linear-gradient(110deg, #000 10%, transparent 70%, transparent);
+}
+
+.jiaran:hover,
+.love:hover {
+    transform: scale(1.2) rotate(360deg)
+}
+
+@font-face {
+    font-family: "iconfont";
+    /* Project id 2918777 */
+    src: url('//at.alicdn.com/t/font_2918777_4q33jojqt59.woff2?t=1637162131819') format('woff2'), url('//at.alicdn.com/t/font_2918777_4q33jojqt59.woff?t=1637162131819') format('woff'), url('//at.alicdn.com/t/font_2918777_4q33jojqt59.ttf?t=1637162131819') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-peise:before {
+    content: "\e744";
+}
+
+.icon-lunwen:before {
+    content: "\e60e";
+}
+
+.icon-shoucangbenzhan:before {
+    content: "\e608";
+    /* color: #bee8ff; */
+}
+
+.icon-gengxinrizhi:before {
+    content: "\e7d7";
+}
+
+.icon-bisai:before {
+    content: "\e60f";
+}
+
+.icon-zongheziyuan:before {
+    content: "\e747";
+}
+
+.icon-ziliaoku:before {
+    content: "\e600";
+}
+
+.icon-shuzhuangtu:before {
+    content: "\e601";
+}
+
+.icon-shejishi:before {
+    content: "\e602";
+}
+
+.icon-lianjie:before {
+    content: "\e6c8";
+}
+
+.icon-gongju:before {
+    content: "\e614";
+}
+
+.icon-mianfei-xianxing:before {
+    content: "\e8b1";
+}
+
+.icon-jingxuan:before {
+    content: "\e880";
+}
+
+.icon-shipin:before {
+    content: "\e618";
+}
+
+.icon-like-fill:before {
+    content: "\e7aa";
+}
+
+.icon-apply:before {
+    content: "\e7ac";
+}
+
+.icon-addition:before {
+    content: "\e7ad";
+}
+
+.icon-annex:before {
+    content: "\e7ae";
+}
+
+.icon-soutu:before {
+    content: "\e8b2";
+}
