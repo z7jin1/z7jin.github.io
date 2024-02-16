@@ -1,3 +1,3 @@
 ### 域名地址：
-
-http://x7zj.cn
+https://www.x7bb.cn
+https://x7bb.cn
